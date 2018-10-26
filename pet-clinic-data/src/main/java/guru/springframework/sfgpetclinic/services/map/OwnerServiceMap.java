@@ -4,6 +4,7 @@ import guru.springframework.sfgpetclinic.model.Owner;
 import guru.springframework.sfgpetclinic.services.OwnerService;
 import org.springframework.stereotype.Service;
 
+// Added anotation Service to injection
 @Service
 public class OwnerServiceMap
         extends AbstractMapService<Owner, Long>
