@@ -80,6 +80,13 @@ public class DataLoader implements CommandLineRunner {
 
         ownerService.save(owner2);
 
+        Owner owner3 = new Owner();
+        owner3.setId(3L);
+        owner3.setFirstName("Peter");
+        owner3.setLastName("Scotch");
+
+        ownerService.save(owner3);
+
         System.out.println("Louded Owners...");
 
     }
