@@ -9,9 +9,9 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Data
-@EqualsAndHashCode(callSuper = false, exclude = "specialities")
+@EqualsAndHashCode(callSuper = false, exclude = "specialties")
 @AllArgsConstructor
 @NoArgsConstructor
 public class Vet extends Person {
-    private Set<Speciality> specialities = new HashSet<>();
+    private Set<Specialty> specialties = new HashSet<>();
 }
