@@ -1,9 +1,0 @@
-${AnsiColor.RED}     ____        __        ____    ___
-${AnsiColor.RED}    /\  _`\     /\ \__    /\  _`\ /\_ \    __          __
-${AnsiColor.RED}    \ \ \L\ \ __\ \ ,_\   \ \ \/\_\//\ \  /\_\    ___ /\_\    ___
-${AnsiColor.RED}     \ \ ,__/'__`\ \ \/    \ \ \/_/_\ \ \ \/\ \ /' _ `\/\ \  /'___\
-${AnsiColor.RED}      \ \ \/\  __/\ \ \_    \ \ \L\ \\_\ \_\ \ \/\ \/\ \ \ \/\ \__/
-${AnsiColor.RED}       \ \_\ \____\\ \__\    \ \____//\____\\ \_\ \_\ \_\ \_\ \____\
-${AnsiColor.RED}        \/_/\/____/ \/__/     \/___/ \/____/ \/_/\/_/\/_/\/_/\/____/
-
-${Ansi.RED} :: Spring Boot${spring-boot.formatted-version} :: ${Ansi.DEFAULT}
