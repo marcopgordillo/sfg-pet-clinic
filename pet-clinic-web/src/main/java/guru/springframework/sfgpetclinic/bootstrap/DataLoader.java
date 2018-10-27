@@ -28,7 +28,7 @@ public class DataLoader implements CommandLineRunner {
 
         loadVets();
 
-        //loadPets();
+        loadPets();
     }
 
     private void loadPets() {
