@@ -28,18 +28,16 @@ public class DataLoader implements CommandLineRunner {
 
         loadVets();
 
-        loadPets();
+        //loadPets();
     }
 
     private void loadPets() {
         Pet pet1 = new Pet();
-        pet1.setId(1L);
         pet1.setName("Jupiter");
 
         petService.save(pet1);
 
         Pet pet2 = new Pet();
-        pet2.setId(2L);
         pet2.setName("Tarzan");
 
         petService.save(pet2);
@@ -49,14 +47,12 @@ public class DataLoader implements CommandLineRunner {
 
     private void loadVets() {
         Vet vet1 = new Vet();
-        vet1.setId(1L);
         vet1.setFirstName("Sam");
         vet1.setLastName("Axe");
 
         vetService.save(vet1);
 
         Vet vet2 = new Vet();
-        vet2.setId(2L);
         vet2.setFirstName("Juan");
         vet2.setLastName("Perez");
 
@@ -67,14 +63,12 @@ public class DataLoader implements CommandLineRunner {
 
     private void loadOwners() {
         Owner owner1 = new Owner();
-        owner1.setId(1L);
         owner1.setFirstName("Michael");
         owner1.setLastName("Weston");
 
         ownerService.save(owner1);
 
         Owner owner2 = new Owner();
-        owner2.setId(2L);
         owner2.setFirstName("Fionna");
         owner2.setLastName("Glenname");
 
