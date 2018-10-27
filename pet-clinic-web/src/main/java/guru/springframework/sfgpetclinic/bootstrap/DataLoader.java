@@ -44,7 +44,7 @@ public class DataLoader implements CommandLineRunner {
 
         petService.save(pet2);
 
-        System.out.println("Louded Pets...");
+        System.out.println("Loaded Pets...");
     }
 
     private void loadVets() {
@@ -62,7 +62,7 @@ public class DataLoader implements CommandLineRunner {
 
         vetService.save(vet2);
 
-        System.out.println("Louded Vets...");
+        System.out.println("Loaded Vets...");
     }
 
     private void loadOwners() {
@@ -80,14 +80,7 @@ public class DataLoader implements CommandLineRunner {
 
         ownerService.save(owner2);
 
-        Owner owner3 = new Owner();
-        owner3.setId(3L);
-        owner3.setFirstName("Peter");
-        owner3.setLastName("Scotch");
-
-        ownerService.save(owner3);
-
-        System.out.println("Louded Owners...");
+        System.out.println("Loaded Owners...");
 
     }
 }
