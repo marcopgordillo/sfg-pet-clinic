@@ -13,5 +13,6 @@ import java.util.Set;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Vet extends Person {
+
     private Set<Specialty> specialties = new HashSet<>();
 }
