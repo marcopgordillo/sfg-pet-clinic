@@ -1,9 +1,8 @@
 package guru.springframework.sfgpetclinic.model;
 
-import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -12,8 +11,6 @@ import java.util.Set;
 
 @Data
 @EqualsAndHashCode(callSuper = false, exclude = "visits")
-@AllArgsConstructor
-@NoArgsConstructor
 @Entity
 @Table(name = "pets")
 public class Pet extends NamedEntity {
@@ -30,5 +27,15 @@ public class Pet extends NamedEntity {
     private Owner owner;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "pet", fetch = FetchType.EAGER)
-    private Set<Visit> visits = new HashSet<>();
+    private final Set<Visit> visits = new HashSet<>();
+
+    @Builder
+    public Pet(Long id, String name, LocalDate birthDate, PetType petType, Owner owner) {
+        super(id, name);
+        this.birthDate = birthDate;
+        this.petType = petType;
+        this.owner = owner;
+    }
+
+    public Pet() {}
 }
