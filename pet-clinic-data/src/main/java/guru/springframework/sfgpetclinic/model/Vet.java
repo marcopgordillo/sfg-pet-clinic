@@ -1,15 +1,15 @@
 package guru.springframework.sfgpetclinic.model;
 
 import lombok.Builder;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
-@Data
-@EqualsAndHashCode(callSuper = false, exclude = "specialties")
+@Getter
+@Setter
 @Entity
 @Table(name = "vets")
 public class Vet extends Person {

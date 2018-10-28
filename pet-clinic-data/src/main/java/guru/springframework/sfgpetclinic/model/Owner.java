@@ -1,8 +1,8 @@
 package guru.springframework.sfgpetclinic.model;
 
 import lombok.Builder;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -11,8 +11,8 @@ import javax.persistence.Table;
 import java.util.HashSet;
 import java.util.Set;
 
-@Data
-@EqualsAndHashCode(callSuper = false, exclude = "pets")
+@Getter
+@Setter
 @Entity
 @Table(name = "owners")
 public class Owner extends Person {
@@ -30,7 +30,10 @@ public class Owner extends Person {
         this.address = address;
         this.city = city;
         this.telephone = telephone;
-        this.pets = pets;
+
+        if (pets != null) {
+            this.pets = pets;
+        }
     }
 
     public Owner(){}
