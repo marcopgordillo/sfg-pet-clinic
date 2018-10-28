@@ -3,6 +3,7 @@ package guru.springframework.sfgpetclinic.model;
 import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.Singular;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -14,6 +15,7 @@ import java.util.Set;
 @Table(name = "vets")
 public class Vet extends Person {
 
+    @Singular
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "vet_specialties", joinColumns = @JoinColumn(name = "vet_id"),
             inverseJoinColumns = @JoinColumn(name = "specialty_id"))

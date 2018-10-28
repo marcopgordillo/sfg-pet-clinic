@@ -6,6 +6,8 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
 
 @Component
 public class DataLoader implements CommandLineRunner {
@@ -106,14 +108,27 @@ public class DataLoader implements CommandLineRunner {
 
         System.out.println("Loaded Pets...");
 
-        Vet vet1 = Vet.builder().firstName("Sam").lastName("Axe").build();
-        vet1.getSpecialties().add(savedSpecialty1);
+        Set<Specialty> specialties = new HashSet<>();
+        specialties.add(savedSpecialty1);
+
+        Vet vet1 = Vet.builder()
+                .id(1L)
+                .firstName("Sam")
+                .lastName("Axe")
+                .specialties(specialties)
+                .build();
+
         vetService.save(vet1);
 
-        Vet vet2 = new Vet();
-        vet2.setFirstName("Juan");
-        vet2.setLastName("Perez");
-        vet2.getSpecialties().add(savedSpecialty2);
+        specialties.add(savedSpecialty2);
+
+        Vet vet2 = Vet.builder()
+                .id(2L)
+                .firstName("Juan")
+                .lastName("Perez")
+                .specialties(specialties)
+                .build();
+
         vetService.save(vet2);
 
         System.out.println("Loaded Vets...");
