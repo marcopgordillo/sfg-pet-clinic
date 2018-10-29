@@ -15,7 +15,7 @@ import java.util.List;
 @Controller
 public class OwnerController {
 
-    private static final String VIEW_CREATE_OR_UPDATE_FORM = "owners/createOrUpdateForm";
+    private static final String VIEW_CREATE_OR_UPDATE_FORM = "owners/createOrUpdateOwnerForm";
     private final OwnerService ownerService;
 
     public OwnerController(OwnerService ownerService) {
