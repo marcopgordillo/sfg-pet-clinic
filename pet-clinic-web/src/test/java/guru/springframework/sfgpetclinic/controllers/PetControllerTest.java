@@ -1,6 +1,7 @@
 package guru.springframework.sfgpetclinic.controllers;
 
 import guru.springframework.sfgpetclinic.model.Owner;
+import guru.springframework.sfgpetclinic.model.Pet;
 import guru.springframework.sfgpetclinic.model.PetType;
 import guru.springframework.sfgpetclinic.services.OwnerService;
 import guru.springframework.sfgpetclinic.services.PetService;
@@ -16,6 +17,14 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 import java.util.HashSet;
 import java.util.Set;
+
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyLong;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @ExtendWith(MockitoExtension.class)
 public class PetControllerTest {
@@ -49,7 +58,7 @@ public class PetControllerTest {
                 .build();
     }
 
-    /*@Test
+    @Test
     void initCreationForm() throws Exception {
         when(ownerService.findById((Long) anyLong())).thenReturn(owner);
         when(petTypeService.findAll()).thenReturn(petTypes);
@@ -59,9 +68,9 @@ public class PetControllerTest {
                 .andExpect(model().attributeExists("owner"))
                 .andExpect(model().attributeExists("pet"))
                 .andExpect(view().name("pets/createOrUpdatePetForm"));
-    }*/
+    }
 
-    /*@Test
+    @Test
     void processCreationForm() throws Exception {
         when(ownerService.findById((Long) anyLong())).thenReturn(owner);
         when(petTypeService.findAll()).thenReturn(petTypes);
@@ -71,9 +80,9 @@ public class PetControllerTest {
                 .andExpect(view().name("redirect:/owners/1"));
 
         verify(petService).save(any());
-    }*/
+    }
 
-    /*@Test
+    @Test
     void initUpdateForm() throws Exception {
         when(ownerService.findById((Long) anyLong())).thenReturn(owner);
         when(petTypeService.findAll()).thenReturn(petTypes);
@@ -84,9 +93,9 @@ public class PetControllerTest {
                 .andExpect(model().attributeExists("owner"))
                 .andExpect(model().attributeExists("pet"))
                 .andExpect(view().name("pets/createOrUpdatePetForm"));
-    }*/
+    }
 
-    /*@Test
+    @Test
     void processUpdateForm() throws Exception {
         when(ownerService.findById((Long) anyLong())).thenReturn(owner);
         when(petTypeService.findAll()).thenReturn(petTypes);
@@ -96,7 +105,7 @@ public class PetControllerTest {
                 .andExpect(view().name("redirect:/owners/1"));
 
         verify(petService).save(any());
-    }*/
+    }
 
     @Test
     void populatePetTypes() {
