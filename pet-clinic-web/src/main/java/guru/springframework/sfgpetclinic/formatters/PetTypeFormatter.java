@@ -3,11 +3,13 @@ package guru.springframework.sfgpetclinic.formatters;
 import guru.springframework.sfgpetclinic.model.PetType;
 import guru.springframework.sfgpetclinic.services.PetTypeService;
 import org.springframework.format.Formatter;
+import org.springframework.stereotype.Component;
 
 import java.text.ParseException;
 import java.util.Collection;
 import java.util.Locale;
 
+@Component
 public class PetTypeFormatter implements Formatter<PetType> {
 
     private final PetTypeService petTypeService;
@@ -26,7 +28,7 @@ public class PetTypeFormatter implements Formatter<PetType> {
             }
         }
 
-        throw new ParseException("Type not found" + text, 0);
+        throw new ParseException("Type not found " + text, 0);
     }
 
     @Override
