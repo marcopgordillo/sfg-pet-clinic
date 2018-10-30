@@ -60,7 +60,7 @@ public class PetControllerTest {
 
     @Test
     void initCreationForm() throws Exception {
-        when(ownerService.findById(anyLong())).thenReturn(owner);
+        when(ownerService.findById((Long) anyLong())).thenReturn(owner);
         when(petTypeService.findAll()).thenReturn(petTypes);
 
         mockMvc.perform(get("/owners/1/pets/new"))
@@ -72,7 +72,7 @@ public class PetControllerTest {
 
     @Test
     void processCreationForm() throws Exception {
-        when(ownerService.findById(anyLong())).thenReturn(owner);
+        when(ownerService.findById((Long) anyLong())).thenReturn(owner);
         when(petTypeService.findAll()).thenReturn(petTypes);
 
         mockMvc.perform(post("/owners/1/pets/new"))
@@ -84,9 +84,9 @@ public class PetControllerTest {
 
     @Test
     void initUpdateForm() throws Exception {
-        when(ownerService.findById(anyLong())).thenReturn(owner);
+        when(ownerService.findById((Long) anyLong())).thenReturn(owner);
         when(petTypeService.findAll()).thenReturn(petTypes);
-        when(petService.findById(anyLong())).thenReturn(Pet.builder().id(2L).build());
+        when(petService.findById((Long) anyLong())).thenReturn(Pet.builder().id(2L).build());
 
         mockMvc.perform(get("/owners/1/pets/2/edit"))
                 .andExpect(status().isOk())
@@ -97,7 +97,7 @@ public class PetControllerTest {
 
     @Test
     void processUpdateForm() throws Exception {
-        when(ownerService.findById(anyLong())).thenReturn(owner);
+        when(ownerService.findById((Long) anyLong())).thenReturn(owner);
         when(petTypeService.findAll()).thenReturn(petTypes);
 
         mockMvc.perform(post("/owners/1/pets/2/edit"))

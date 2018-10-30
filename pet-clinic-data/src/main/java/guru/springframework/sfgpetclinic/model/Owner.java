@@ -37,4 +37,19 @@ public class Owner extends Person {
     }
 
     public Owner(){}
+
+    public Pet getPet(String name, Boolean ignoreNew) {
+
+        ignoreNew = ignoreNew == null ? true : ignoreNew;
+
+        for(Pet pet : pets) {
+                if (!pet.isNew() || ignoreNew) {
+                    if (pet.getName().equalsIgnoreCase(name)) {
+                        return pet;
+                    }
+                }
+            }
+
+        return null;
+    }
 }
