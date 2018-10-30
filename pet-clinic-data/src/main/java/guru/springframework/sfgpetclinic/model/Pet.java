@@ -29,14 +29,18 @@ public class Pet extends NamedEntity {
     private Owner owner;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "pet", fetch = FetchType.EAGER)
-    private final Set<Visit> visits = new HashSet<>();
+    private Set<Visit> visits = new HashSet<>();
 
     @Builder
-    public Pet(Long id, String name, LocalDate birthDate, PetType petType, Owner owner) {
+    public Pet(Long id, String name, LocalDate birthDate, PetType petType, Owner owner, Set<Visit> visits) {
         super(id, name);
         this.birthDate = birthDate;
         this.petType = petType;
         this.owner = owner;
+
+        if (visits != null) {
+            this.visits = visits;
+        }
     }
 
     public Pet() {}
