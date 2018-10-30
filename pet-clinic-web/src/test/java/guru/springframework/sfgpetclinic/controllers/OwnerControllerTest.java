@@ -76,7 +76,7 @@ class OwnerControllerTest {
 
         mockMvc.perform(get("/owners"))
                 .andExpect(status().isOk())
-                .andExpect(view().name("owners/index"))
+                .andExpect(view().name("owners/ownerList"))
                 .andExpect(model().attribute("owners", hasSize(2)));
     }
 
@@ -94,7 +94,7 @@ class OwnerControllerTest {
     void initCreationForm() throws Exception {
         mockMvc.perform(get("/owners/new"))
                 .andExpect(status().isOk())
-                .andExpect(view().name("owners/createOrUpdateForm"))
+                .andExpect(view().name("owners/createOrUpdateOwnerForm"))
                 .andExpect(model().attributeExists("owner"));
     }
 
@@ -105,8 +105,7 @@ class OwnerControllerTest {
         mockMvc.perform(post("/owners/new"))
                 .andExpect(status().is3xxRedirection())
                 .andExpect(view().name("redirect:/owners/1"))
-                .andExpect(model().attributeExists("owner"))
-                .andExpect(model().attribute("owner", hasProperty("id", is(1L))));
+                .andExpect(model().attributeExists("owner"));
 
         verify(ownerService).save(ArgumentMatchers.any());
     }
@@ -117,7 +116,7 @@ class OwnerControllerTest {
 
         mockMvc.perform(get("/owners/1/edit"))
                 .andExpect(status().isOk())
-                .andExpect(view().name("owners/createOrUpdateForm"))
+                .andExpect(view().name("owners/createOrUpdateOwnerForm"))
                 .andExpect(model().attributeExists("owner"));
 
         verifyZeroInteractions(ownerService);
