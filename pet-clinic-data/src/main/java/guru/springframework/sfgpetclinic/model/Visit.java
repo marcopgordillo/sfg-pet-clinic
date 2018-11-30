@@ -19,6 +19,7 @@ public class Visit extends BaseEntity {
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate date;
+
     private String description;
 
     @ManyToOne
