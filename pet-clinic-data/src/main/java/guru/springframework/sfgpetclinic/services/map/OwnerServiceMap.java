@@ -21,7 +21,7 @@ public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements 
     }
 
     @Override
-    public List<Owner> findByLastNameLike(String lastName) {
+    public List<Owner> findAllByLastNameLike(String lastName) {
         //TODO - impl map service
         return null;
     }
