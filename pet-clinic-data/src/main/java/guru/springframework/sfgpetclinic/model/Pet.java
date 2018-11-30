@@ -2,6 +2,7 @@ package guru.springframework.sfgpetclinic.model;
 
 import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -12,6 +13,7 @@ import java.util.Set;
 
 @Getter
 @Setter
+@NoArgsConstructor
 @Entity
 @Table(name = "pets")
 public class Pet extends NamedEntity {
@@ -42,6 +44,4 @@ public class Pet extends NamedEntity {
             this.visits = visits;
         }
     }
-
-    public Pet() {}
 }

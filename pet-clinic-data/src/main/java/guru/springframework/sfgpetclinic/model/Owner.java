@@ -2,6 +2,7 @@ package guru.springframework.sfgpetclinic.model;
 
 import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.CascadeType;
@@ -13,6 +14,7 @@ import java.util.Set;
 
 @Getter
 @Setter
+@NoArgsConstructor
 @Entity
 @Table(name = "owners")
 public class Owner extends Person {
@@ -35,8 +37,6 @@ public class Owner extends Person {
             this.pets = pets;
         }
     }
-
-    public Owner(){}
 
     public Pet getPet(String name, Boolean ignoreNew) {
 
